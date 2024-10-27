@@ -5,8 +5,10 @@
 
 <ul class="task-list">
   {#each tasks.list as task}
-    <div class="task">
-      <p>{task.name}</p>
-    </div>
+    <li>
+      <button class="btn">
+        <p>{task.name}</p>
+      </button>
+    </li>
   {/each}
 </ul>
