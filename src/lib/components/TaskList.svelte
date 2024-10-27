@@ -45,14 +45,67 @@
     }
   }
 
-  button.btn {
+  details {
+    --_rounding: 40px;
     width: 100%;
-    color: var(--clr-neutral-600);
-    justify-content: flex-start;
-    
-    &:is(:hover, :focus) {
-      color: var(--clr-neutral-950);
+    border-radius: var(--_rounding);
+
+    &:hover {
       background: var(--clr-white);
+    }
+    &[open] {
+      background: var(--clr-white);
+    }
+
+    & > summary {
+      width: 100%;
+      padding: 20px;
+      color: var(--clr-neutral-600);
+      border-radius: var(--_rounding);
+      border-bottom: 2px solid transparent;
+      outline: 2px solid transparent;
+
+      &:focus-visible {
+        outline-color: var(--clr-black);
+      }
+    }
+    &[open] > summary {
+      color: var(--clr-neutral-950);
+      border-color: var(--clr-neutral-200);
+      border-radius: var(--_rounding) var(--_rounding) 0 0;
+    }
+
+    & > .deets {
+      padding: 20px;
+    }
+
+    & .description {
+      padding-bottom: 20px;
+    }
+    & .date {
+      color: var(--clr-neutral-500);
+
+      & span {
+        color: var(--clr-neutral-800);
+      }
+    }
+
+    & .actions {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 20px;
+
+      & > button.btn {
+        color: var(--clr-neutral-200);
+        background: var(--clr-neutral-800);
+
+        &:is(:hover, :focus) {
+          color: var(--clr-white);
+          background: var(--clr-neutral-950);
+        }
+      }
     }
   }
 </style>
