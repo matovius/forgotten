@@ -81,12 +81,12 @@
       <div class="surface" transition:fly={{ duration: 200, easing: quadOut, x: 0, y: 20, opacity: 0 }}>
         <label for="task-name">
           <p>Task</p>
-          <input type="text" name="name" id="task-name"
+          <input class="input" type="text" name="name" id="task-name"
             bind:value={newTaskData.name} placeholder="Enter your task..." />
         </label>
         <label for="task-description">
           <p>Description (optional)</p>
-          <textarea name="description" id="task-description"
+          <textarea class="input" name="description" id="task-description" rows="4"
             bind:value={newTaskData.description} placeholder="Give your task a description..."></textarea>
         </label>
         <div class="actions">
@@ -179,7 +179,9 @@
     & > .surface {
       width: 100%;
       max-width: 600px;
-      height: 50lvh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       padding: 20px;
       border-radius: 40px;
       background: var(--clr-white);
@@ -192,6 +194,68 @@
       background: color-mix(in srgb, var(--clr-black), transparent 50%);
       position: absolute;
       inset: 0;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    & > textarea {
+      resize: none;
+    }
+
+    & > .input {
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid var(--clr-neutral-200);
+      background: var(--clr-neutral-200);
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+
+      &:hover {
+        border-color: var(--clr-neutral-400);
+      }
+
+      &:focus {
+        background: transparent;
+      }
+
+      &:focus-visible {
+        outline-color: var(--clr-black);
+      }
+    }
+  }
+
+  div.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    & button.btn:is(:nth-child(1)) {
+      border-color: var(--clr-neutral-200);
+
+      &:is(:hover, :focus) {
+        color: var(--clr-black);
+        background: var(--clr-neutral-200);
+      }
+    }
+
+    & button.btn:is(:nth-last-child(1)) {
+      color: var(--clr-neutral-200);
+      background: var(--clr-neutral-800);
+
+      &:not(:disabled):is(:hover, :focus) {
+        color: var(--clr-white);
+        background: var(--clr-neutral-950);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        filter: grayscale(1);
+        cursor: not-allowed;
+      }
     }
   }
 </style>
