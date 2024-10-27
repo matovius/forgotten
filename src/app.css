@@ -36,7 +36,6 @@
 }
 
 body {
-  color-scheme: light dark;
   font-family: var(--font-martian);
   color: var(--clr-neutral-800);
   background: var(--clr-neutral-200);
