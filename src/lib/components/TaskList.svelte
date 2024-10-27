@@ -12,3 +12,30 @@
     </li>
   {/each}
 </ul>
+
+<style>
+  ul.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    & > li {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  button.btn {
+    width: 100%;
+    color: var(--clr-neutral-600);
+    justify-content: flex-start;
+    
+    &:is(:hover, :focus) {
+      color: var(--clr-neutral-950);
+      background: var(--clr-white);
+    }
+  }
+</style>
