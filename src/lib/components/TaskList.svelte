@@ -4,8 +4,8 @@
 </script>
 
 <ul class="task-list">
-  {#each tasks.list as task}
-    <li>
+  {#each tasks.list as task, index}
+    <li data-index={index}>
       <button class="btn">
         <p>{task.name}</p>
       </button>
@@ -18,7 +18,6 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 5px;
 
