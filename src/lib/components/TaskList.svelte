@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { tasks } from "$lib/scripts/stores.svelte";
 
+  // TODO: Add a secondary confirmation dialog to handle misclicks and stuff like that
+  function removeTask(index: number) {
+    tasks.list.splice(index, 1);
+  }
+
 </script>
 
 <ul class="task-list">
