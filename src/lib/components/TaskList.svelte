@@ -6,9 +6,27 @@
 <ul class="task-list">
   {#each tasks.list as task, index}
     <li data-index={index}>
-      <button class="btn">
-        <p>{task.name}</p>
-      </button>
+      <details>
+        <summary>{task.name}</summary>
+
+        <div class="deets">
+          {#if task.description}
+            <div class="description">
+              <p>{task.description}</p>
+            </div>
+          {/if}
+
+          <div class="date">
+            <small>Created: <span>{task.creationDate}</span></small>
+          </div>
+  
+          <div class="actions">
+            <button class="btn" aria-label="Forget" style="--btn-pad-y: 10px;" onclick={() => { removeTask(index); }}>
+              <span aria-hidden="true">Forget</span>
+            </button>
+          </div>
+        </div>
+      </details>
     </li>
   {/each}
 </ul>
