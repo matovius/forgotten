@@ -21,7 +21,7 @@
       newTaskData.creation = now;
       newTaskData.creationDate = new Date(now).toLocaleDateString();
 
-      tasks.list.push(newTaskData);
+      tasks.list = [newTaskData, ...tasks.list];
 
       newTaskData = {
         name: "",
@@ -259,4 +259,3 @@
     }
   }
 </style>
-
