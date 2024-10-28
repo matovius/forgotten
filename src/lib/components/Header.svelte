@@ -82,12 +82,12 @@
         <label for="task-name">
           <p>Task</p>
           <input class="input" type="text" name="name" id="task-name"
-            bind:value={newTaskData.name} placeholder="Enter your task..." />
+            bind:value={newTaskData.name} placeholder="Enter your task..." autocapitalize="sentences" autocomplete="off" />
         </label>
         <label for="task-description">
           <p>Description (optional)</p>
           <textarea class="input" name="description" id="task-description" rows="4"
-            bind:value={newTaskData.description} placeholder="Give your task a description..."></textarea>
+            bind:value={newTaskData.description} placeholder="Give your task a description..." autocapitalize="sentences"></textarea>
         </label>
         <div class="actions">
           <button class="btn" aria-label="Cancel" onclick={cancelNewTask}>
